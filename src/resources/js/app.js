@@ -6,6 +6,9 @@
 
 import './bootstrap';
 import { createApp } from 'vue';
+import 'vuetify/lib/styles/main.sass';
+import { createVuetify } from 'vuetify';
+const vuetify = createVuetify();
 
 /**
  * Next, we will create a fresh Vue application instance. You may then begin
@@ -14,6 +17,7 @@ import { createApp } from 'vue';
  */
 
 const app = createApp({});
+app.use(vuetify)
 
 import ExampleComponent from './components/ExampleComponent.vue';
 app.component('example-component', ExampleComponent);
