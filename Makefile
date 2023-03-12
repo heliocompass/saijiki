@@ -86,3 +86,6 @@ ide-helper:
 	docker compose exec app php artisan ide-helper:generate
 	docker compose exec app php artisan ide-helper:meta
 	docker compose exec app php artisan ide-helper:models --nowrite
+
+mkdocs-build:
+	docker compose exec mkdocs-material mkdocs build

@@ -72,3 +72,22 @@ services:
         published: ${MAILHOG_PUBLISHED_PORT:-8025}
         protocol: tcp
         mode: host
+
+  # MkDocs
+  mkdocs-material:
+    build: ./infra/docker/mkdocs
+    container_name: mkdocs-material
+    restart: always
+    depends_on:
+      - plantuml-server
+    volumes:
+      - ./mkdocs:/docs
+    ports:
+      - "8000:8000" 
+  # PlantUML
+  plantuml-server:
+    image: plantuml/plantuml-server
+    restart: always
+    ports:
+      - "8080:8080"
+
