@@ -83,7 +83,7 @@ services:
     volumes:
       - ./mkdocs:/docs
     ports:
-      - "8000:8000" 
+      - "8000:8000"
   # PlantUML
   plantuml-server:
     image: plantuml/plantuml-server
