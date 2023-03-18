@@ -25,6 +25,10 @@ restart:
 	@make up
 destroy:
 	docker compose down --rmi all --volumes --remove-orphans
+dev:
+	cd src && pnpm dev
+template-dev:
+	cd template && pnpm dev
 ps:
 	docker compose ps
 logs:
