@@ -11,6 +11,9 @@ theme:
   language: "ja"
   feature:
     tabs: true
+  features:
+    - navigation.tabs
+    - navigation.sections
 
 # cssのカスタマイズ設定
 extra_css:
