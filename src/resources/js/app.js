@@ -4,11 +4,21 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-import './bootstrap';
-import { createApp } from 'vue';
-import 'vuetify/lib/styles/main.sass';
-import { createVuetify } from 'vuetify';
-const vuetify = createVuetify();
+import "./bootstrap";
+import { createApp } from "vue";
+import "vuetify/lib/styles/main.sass";
+import "@mdi/font/css/materialdesignicons.css"; // Ensure you are using css-loader
+import { createVuetify } from "vuetify";
+import { aliases, mdi } from "vuetify/iconsets/mdi";
+const vuetify = createVuetify({
+    icons: {
+        defaultSet: "mdi",
+        aliases,
+        sets: {
+            mdi,
+        },
+    },
+});
 
 /**
  * Next, we will create a fresh Vue application instance. You may then begin
@@ -17,10 +27,10 @@ const vuetify = createVuetify();
  */
 
 const app = createApp({});
-app.use(vuetify)
+app.use(vuetify);
 
-import ExampleComponent from './components/ExampleComponent.vue';
-app.component('example-component', ExampleComponent);
+import ExampleComponent from "./components/ExampleComponent.vue";
+app.component("example-component", ExampleComponent);
 
 /**
  * The following block of code may be used to automatically register your
@@ -40,4 +50,4 @@ app.component('example-component', ExampleComponent);
  * scaffolding. Otherwise, you will need to add an element yourself.
  */
 
-app.mount('#app');
+app.mount("#app");
