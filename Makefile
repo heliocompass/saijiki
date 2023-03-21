@@ -28,7 +28,7 @@ destroy:
 dev:
 	cd src && pnpm dev
 template-dev:
-	cd template && pnpm dev
+	cd template && pnpm i && pnpm dev
 ps:
 	docker compose ps
 logs:
