@@ -1,3 +1,8 @@
+<script setup lang="ts">
+import species from '~~/data/species';
+</script>
+
+
 <template>
     <v-app-bar color="grey-darken-2" density="compact">
         <v-app-bar-title>New Observation</v-app-bar-title>
@@ -7,6 +12,8 @@
         <v-form fast-fail method="get" action="/">
             <v-file-input accept="image/*" label="Select an image" outlined filled prepend-icon="mdi-camera"
                 capture="camera"></v-file-input>
+            <v-autocomplete variant="outlined" density="compact" label="観測種目" item-value="id" item-title="species"
+                :items="species"></v-autocomplete>
             <v-text-field label="タイトル"></v-text-field>
             <v-textarea label="メモ" variant="outlined"></v-textarea>
             <v-btn type="submit" color="primary" block class="mt-2">投稿</v-btn>
